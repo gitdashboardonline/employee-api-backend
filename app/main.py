@@ -7,6 +7,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="HRMS Lite API")
 
+origins = [
+    "http://localhost:4200",
+    "https://your-netlify-app.netlify.app"
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
